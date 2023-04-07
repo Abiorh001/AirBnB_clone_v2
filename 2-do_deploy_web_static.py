@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """a script to add compressed file to server
    the script will uncompreesed the files
    the script will served the servers the index.html files"""

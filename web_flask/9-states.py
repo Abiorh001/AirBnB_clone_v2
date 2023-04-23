@@ -2,6 +2,7 @@
 """ Script that runs a Flask app """
 from flask import Flask, render_template
 from models import storage
+from models.state import State
 
 app = Flask(__name__)
 
@@ -15,14 +16,14 @@ def closing(error):
 @app.route('/states', strict_slashes=False)
 def states():
     """ function that list states"""
-    state = storage.all('State')
+    state = storage.all(State)
     return render_template('9-states.html', state=state)
 
 
 @app.route('/states/<id>', strict_slashes=False)
 def states_id(id):
     """ function that list a state by id"""
-    state = storage.all('State')
+    state = storage.all(State)
     return render_template('9-states.html', state=state, id=id)
 
 
